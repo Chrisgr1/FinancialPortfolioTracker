@@ -1,0 +1,9 @@
+venv/
+*.pyc
+*.pyo
+__pycache__/
+*.txt
+*.log
+*.db
+*.sqlite3
+*.lock
