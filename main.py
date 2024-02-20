@@ -43,7 +43,7 @@ def home():
     for company, symbol in companies:
         ticker = yf.Ticker(symbol)
         info = ticker.info
-        if info.get('symbol') is not None:
+        if info.get('symbol') and info.get('marketCap') is not None:
             companies_info.append({'name': company, 'info': info})
 
     return render_template('home.html', companies_info=companies_info)
