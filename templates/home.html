@@ -7,13 +7,17 @@
     <h1>Welcome to the Financial Portfolio Tracker</h1>
     <p>Select a company from the list to view its details:</p>
     
-<p> {{companies_info}}</p>
+<!-- <p> {{companies_info}}</p> -->
 
-<h3>api with FTSE 100 companies hard to find.. can list manually but pandas datareader might help</h3>
     <ul>
-      <li><a href="/company/AAL">American Airlines Group Inc.</a></li>
-      <li><a href="/company/BA">The Boeing Company</a></li>
-      <li><a href="/company/CMCSA">Comcast Corporation</a></li>
+        {% for company in companies_info %}
+            <li>
+                <h2>{{ company.name }} ({{ company.info.symbol }})</h2>
+                <p>Market Cap: {{ company.info.marketCap }}</p>
+                <p>Current Price: {{ company.info.currentPrice }}</p>
+                <!-- Add more fields as needed -->
+            </li>
+        {% endfor %}
     </ul>
   </body>
 </html>
