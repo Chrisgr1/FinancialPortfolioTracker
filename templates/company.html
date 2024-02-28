@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Financial Portfolio Tracker</title>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Financial Portfolio Tracker</title>
+      </head>
+      <body>
+        <h1>Financial Portfolio Tracker company:</h1>
+        <p>Company: {{ company['name'] }}</p>
+        <p>Symbol: {{ company['symbol'] }}</p>
+        <ul>
+          {% for key, value in company.items() %}
+            <li>{{ key }}: {{ value }}</li>
+          {% endfor %}
+        </ul>
 
-      // Define a function to fetch the stock price for a given symbol
-
-  </head>
-  <body>
-    <h1>Financial Portfolio Tracker company:</h1>
-    <p> company:</p>
-    <p> price:</p>
+      </body>
+    </html>
   </body>
 </html>

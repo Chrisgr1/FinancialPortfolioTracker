@@ -45,9 +45,17 @@ def home():
 
     return render_template('home.html', companies_info=companies_info)
 
+def get_company(symbol):
+    # Logic to fetch the company information based on the symbol
+    # Replace this with your implementation
+        ticker = yf.Ticker(symbol)
+        info = ticker.info
+        return info
+
 @app.route('/company/<symbol>')
 def company(symbol):
-    return render_template('company.html', symbol=symbol)
+    company = get_company(symbol)
+    return render_template('company.html', symbol=symbol, company=company)
 
 
 if __name__ == '__main__':
