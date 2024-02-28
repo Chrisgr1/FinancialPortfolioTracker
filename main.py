@@ -1,16 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import yfinance as yf
 
 app = Flask(__name__)
 
-
+#approute
+# https://flask.palletsprojects.com/en/3.0.x/quickstart/
 
 @app.route('/')
 def home():
-    # # Get the apple data using yfinance
-    # apple = yf.Ticker("aapl")
-    # info = apple.info
-    # return render_template('home.html', apple_info=info)
     companies = (
 ('Shell', 'SHEL'),
 ('AstraZeneca', 'AZN'),
